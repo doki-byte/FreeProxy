@@ -5,42 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e00aaf87-eebb-402b-81c7-72daf396e82c" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/build.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/request/fofa.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/request/hunter.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/request/quake.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Proxyz-master.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/proxyz.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/build.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/client/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/client/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/client/check.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/client/check.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/client/response.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/client/response.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/client/start.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/client/start.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/request/pr_89.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/request/pr_89.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/request/pr_happy.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/request/pr_happy.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/request/pr_qi_yun.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/request/pr_qi_yun.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/request/request.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/request/request.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/request/rs_proxy5.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/request/rs_proxy5.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/request/rs_proxy_hub.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/request/rs_proxy_hub.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/About.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Config.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Config.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Fetch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Fetch.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Panel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Panel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Run.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Run.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/store/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/wailsjs/go/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/wailsjs/go/models.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wails.json" beforeDir="false" afterPath="$PROJECT_DIR$/wails.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,32 +18,32 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2tweumsPFNWQnOpAzbpcpckWZ4G" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "master",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/muhan",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\muhan\\Desktop\\FreeProxy\\frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/muhan&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\muhan\\Desktop\\FreeProxy\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
