@@ -6,8 +6,7 @@ export interface Config {
     FofaKey: string;
     HunterKey: string;
     QuakeKey: string;
-
-    CheckTimeout: string; // 保持与 Go 中一致，字符串类型
+    Country: string;
     Maxpage: string; // 保持与 Go 中一致，字符串类型
 
     CoroutineCount: number;
@@ -44,7 +43,8 @@ export const useConfigStore = defineStore('config', {
         QuakeKey: "",
         CheckTimeout: 0,
         Maxpage: 0,
-        LiveProxyLists: [] as any[] // 可以根据实际数据改成具体类型
+        LiveProxyLists: [] as any[], // 可以根据实际数据改成具体类型
+        Country: "0"
     }),
 
     actions: {
@@ -62,8 +62,8 @@ export const useConfigStore = defineStore('config', {
                 this.FofaKey = profile.FofaKey;
                 this.HunterKey = profile.HunterKey;
                 this.QuakeKey = profile.QuakeKey;
-                this.CheckTimeout = Number(profile.CheckTimeout);
                 this.Maxpage = Number(profile.Maxpage);
+                this.Country = profile.Country;
             } catch (err) {
                 console.error("获取配置失败:", err);
             }
@@ -160,6 +160,12 @@ export const useConfigStore = defineStore('config', {
         },
         setMaxpage(maxpage: number) {
             this.Maxpage = maxpage;
+        },
+        getCountry(){
+            return this.Country;
+        },
+        setCountry(country: string) {
+            this.Country = country;
         }
     }
 });

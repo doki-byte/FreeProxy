@@ -46,6 +46,10 @@ const formData = ref({
     get: () => configState.getMaxpage(),
     set: (value) => configState.setMaxpage(value),
   }),
+  Country:computed({
+    get: () => configState.getCountry(),
+    set: (value) => configState.setCountry(value),
+  })
 
 });
 
@@ -90,6 +94,7 @@ function saveConfig() {
 
   const configData: Config = {
     Code: formData.value.Code,
+    Country: formData.value.Country,
     Error: formData.value.Error,
     FilePath: formData.value.FilePath,
     CoroutineCount: formData.value.CoroutineCount,
@@ -100,7 +105,6 @@ function saveConfig() {
     FofaKey: formData.value.FofaKey,
     HunterKey: formData.value.HunterKey,
     QuakeKey: formData.value.QuakeKey,
-    CheckTimeout: formData.value.CheckTimeOut.toString(),
     Maxpage: formData.value.MaxPage.toString(),
     LiveProxies: configState.getLiveProxies(),
     AllProxies: configState.getAllProxies(),
@@ -232,9 +236,9 @@ onMounted(() => {
 
     <a-row :gutter="[24, 12]">
       <a-col :span="12">
-        <a-form-item label="采集超时时间" name="TimeOut">
+        <a-form-item label="超时时间" name="TimeOut">
           <a-input-number
-              v-model="formData.CheckTimeOut"
+              v-model="formData.Timeout"
               :mode="'button'"
           ></a-input-number>
         </a-form-item>
@@ -248,34 +252,33 @@ onMounted(() => {
         </a-form-item>
       </a-col>
     </a-row>
-  </a-form>
-
-  <p class="config-viewer-title">检测配置：</p>
-  <a-form ref="formRef" :model="formData" :layout="'vertical'">
     <a-row :gutter="[24, 12]">
       <a-col :span="12">
         <a-form-item label="协程数量" name="CoroutineCount">
-          <a-input-number v-model="formData.CoroutineCount" :mode="'button'"></a-input-number>
+          <a-input-number
+              v-model="formData.CoroutineCount"
+              :mode="'button'"
+          ></a-input-number>
         </a-form-item>
       </a-col>
       <a-col :span="12">
-        <a-form-item label="超时时长" name="Timeout">
-          <a-input-number v-model="formData.Timeout" :mode="'button'"></a-input-number>
+        <a-form-item label="代理地区" name="Country">
+          <a-select
+              v-model="formData.Country"
+              placeholder="请选择代理地区"
+              hide-on-select
+              allow-clear
+          >
+            <a-option value="0">所有</a-option>
+            <a-option value="1">国内</a-option>
+            <a-option value="2">国外</a-option>
+          </a-select>
         </a-form-item>
       </a-col>
     </a-row>
-
-    <a-row :gutter="[24, 12]">
-      <a-col :span="12">
-      </a-col>
-      <a-col :span="12">
-      </a-col>
-    </a-row>
-
     <a-form-item label="Socks地址" name="SocksAddress">
       <a-input v-model="formData.SocksAddress"></a-input>
     </a-form-item>
-
   </a-form>
 </template>
 

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e00aaf87-eebb-402b-81c7-72daf396e82c" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/build.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/request/fofa.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/request/hunter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/request/quake.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Proxyz-master.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/proxyz.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/client/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/client/app.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/client/check.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/client/check.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/client/response.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/client/response.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/client/start.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/client/start.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/request/pr_89.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/request/pr_89.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/request/pr_happy.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/request/pr_happy.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/request/pr_qi_yun.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/request/pr_qi_yun.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/request/request.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/request/request.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/request/rs_proxy5.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/request/rs_proxy5.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/request/rs_proxy_hub.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/request/rs_proxy_hub.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/About.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Config.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Config.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Fetch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Fetch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Panel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Panel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Run.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Run.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/wailsjs/go/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/wailsjs/go/models.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wails.json" beforeDir="false" afterPath="$PROJECT_DIR$/wails.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" url="file://E:/Program Files/Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2tweumsPFNWQnOpAzbpcpckWZ4G" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "master",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "C:/Users/muhan",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\muhan\\Desktop\\FreeProxy\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-gosdk-d297c17c1fbd-d82d926f19eb-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-243.22562.186" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-GO-243.22562.186" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>

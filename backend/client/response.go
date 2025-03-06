@@ -1,10 +1,3 @@
-/*
- * @Author: Lockly
- * @Date: 2025-02-17 16:56:24
- * @LastEditors: Lockly
- * @LastEditTime: 2025-02-17 16:58:48
- */
-
 package client
 
 import "fmt"

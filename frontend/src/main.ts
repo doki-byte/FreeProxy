@@ -1,9 +1,3 @@
-/*
- * @Author: Lockly
- * @Date: 2025-02-12 22:54:13
- * @LastEditors: Lockly
- * @LastEditTime: 2025-02-18 12:07:25
- */
 import { createApp } from 'vue'
 import { createPinia } from 'pinia';
 import ArcoVue from '@arco-design/web-vue';

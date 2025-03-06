@@ -1,10 +1,3 @@
-/*
- * @Author: Lockly
- * @Date: 2025-02-17 18:56:25
- * @LastEditors: Lockly
- * @LastEditTime: 2025-02-17 18:57:39
- */
-
 package request
 
 import (

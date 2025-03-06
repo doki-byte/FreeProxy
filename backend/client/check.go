@@ -1,7 +1,10 @@
 package client
 
 import (
+	"doki-byte/FreeProxy/backend/config"
 	"fmt"
+	"os"
+	runtime2 "runtime"
 	"strconv"
 	"strings"
 	"sync"
@@ -49,6 +52,37 @@ func (a *App) CheckDatasets() Response {
 	}
 
 	a.config.SetLiveProxies(availableProxiesList)
+
+	// 获取配置文件路径
+	optSys := runtime2.GOOS
+	path := ""
+	if optSys == "windows" {
+		path = config.GetCurrentAbPathByExecutable() + "\\proxy_success.txt"
+	} else {
+		path = config.GetCurrentAbPathByExecutable() + "/proxy_success.txt"
+	}
+
+	// 检查文件是否已存在，如果不存在则创建
+	file, err := os.OpenFile(path, os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0644)
+	if err != nil {
+		a.Error("无法打开文件: %v", err)
+	}
+	defer file.Close()
+
+	// 使用 map 去重代理列表
+	proxySet := make(map[string]struct{})
+	for _, proxy := range availableProxiesList {
+		proxySet[proxy] = struct{}{}
+	}
+
+	// 写入去重后的代理地址，并保证每行一个代理
+	for proxy := range proxySet {
+		_, err := file.WriteString(proxy + "\n")
+		if err != nil {
+			a.Error("写入失败: %v", err)
+		}
+	}
+
 	msg := fmt.Sprintf("共有 %d 条有效数据", a.config.LiveProxies)
 	a.Debug("msg: ", msg)
 	runtime.EventsEmit(a.ctx, "is_ready", a.config.LiveProxies)

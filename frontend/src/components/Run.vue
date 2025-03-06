@@ -252,7 +252,7 @@ onUnmounted(() => {
   border-radius: 8px;
   overflow-y: auto;
   background-color: rgba(255, 255, 255, 0.4);
-  color: #ffffff;
+  color: #e88500;
   scrollbar-width: thin;
   border: 1px solid rgba(197, 186, 186, 0.4);
 }

@@ -1,10 +1,10 @@
 package main
 
 import (
+	"doki-byte/FreeProxy/backend/client"
 	"embed"
 	"github.com/wailsapp/wails/v2/pkg/options/linux"
 	"github.com/wailsapp/wails/v2/pkg/options/mac"
-	"proxyz/backend/client"
 
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/options"

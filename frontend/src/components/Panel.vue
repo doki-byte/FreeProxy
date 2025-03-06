@@ -4,7 +4,6 @@ import {onMounted, onUnmounted, ref} from "vue";
 import Run from "@/components/Run.vue";
 import Fetch from "@/components/Fetch.vue";
 import Config from "@/components/Config.vue";
-import About from "@/components/About.vue";
 import {EventsOff, EventsOn} from "../../wailsjs/runtime";
 import {useConfigStore} from "@/store/types";
 
@@ -73,12 +72,6 @@ onUnmounted(() => {
             <icon-settings/> 配置
           </template>
             <Config/>
-        </a-tab-pane>
-        <a-tab-pane key="4">
-          <template #title>
-            <icon-info-circle/> 关于
-          </template>
-            <About/>
         </a-tab-pane>
       </a-tabs>
 

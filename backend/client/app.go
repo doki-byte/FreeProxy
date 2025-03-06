@@ -3,12 +3,12 @@ package client
 import (
 	"bufio"
 	"context"
+	"doki-byte/FreeProxy/backend/config"
+	"doki-byte/FreeProxy/backend/info"
+	"doki-byte/FreeProxy/backend/request"
 	"fmt"
 	"io"
 	"os"
-	"proxyz/backend/config"
-	"proxyz/backend/info"
-	"proxyz/backend/request"
 	"strings"
 	"time"
 
@@ -30,9 +30,12 @@ func NewApp() *App {
 		stopChan: stopChan,
 		config:   config.GetConfig(),
 		rpm: request.NewProxyManager([]request.ProxyFetcher{
-			&request.Free89,
-			&request.FreeHappy,
-			&request.FreeQiYun,
+			//&request.Free89,
+			//&request.FreeHappy,
+			//&request.FreeQiYun,
+			&request.HunterConfig{},
+			&request.QuakeConfig{},
+			&request.FofaConfig{},
 		}),
 		metrics: info.NewProxyMetrics(stopChan),
 	}

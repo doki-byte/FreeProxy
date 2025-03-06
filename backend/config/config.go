@@ -17,9 +17,8 @@ type Config struct {
 	FofaKey   string
 	HunterKey string
 	QuakeKey  string
-
-	CheckTimeout string
-	Maxpage      string
+	Country   string
+	Maxpage   string
 
 	CoroutineCount int
 	LiveProxies    int
@@ -64,18 +63,13 @@ func CreateConfigFile() error {
 	// 文件不存在，创建并写入默认配置
 	defaultConfig := map[string]string{
 		"Timeout":        "10",
-		"Error":          "",
+		"Country":        "0",
 		"Email":          "",
 		"FofaKey":        "",
 		"HunterKey":      "",
 		"QuakeKey":       "",
 		"Maxpage":        "10",
-		"Status":         "0",
-		"Code":           "0",
 		"CoroutineCount": "200",
-		"CheckTimeout":   "20",
-		"AllProxies":     "0",
-		"LiveProxies":    "0",
 		"SocksAddress":   "127.0.0.1:1080",
 	}
 
@@ -199,19 +193,21 @@ func (p *Config) SaveConfig() error {
 		"FofaKey":        p.FofaKey,
 		"HunterKey":      p.HunterKey,
 		"QuakeKey":       p.QuakeKey,
-		"CheckTimeout":   p.CheckTimeout,
 		"Maxpage":        p.Maxpage,
 		"CoroutineCount": strconv.Itoa(p.CoroutineCount),
-		"LiveProxies":    strconv.Itoa(p.LiveProxies),
-		"AllProxies":     strconv.Itoa(p.AllProxies),
 		"Timeout":        p.Timeout,
 		"SocksAddress":   p.SocksAddress,
 		"Status":         strconv.Itoa(p.Status),
 		"Code":           strconv.Itoa(p.Code),
 		"Error":          p.Error,
+		"Country":        p.Country,
 	}
 
 	for key, value := range configMap {
+		if key == "SocksAddress" {
+			value = strings.Replace(value, "socks5://", "", -1)
+		}
+
 		_, err := writer.WriteString(fmt.Sprintf("%s=%s\n", key, value))
 		if err != nil {
 			return err

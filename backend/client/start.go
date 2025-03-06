@@ -22,7 +22,7 @@ func (a *App) startListening() Response {
 	if len(a.config.LiveProxyLists) == 0 {
 		a.Error("缓存代理数为0，任务取消。")
 		runtime.EventsEmit(a.ctx, "log_update", "[ERR] 缓存代理数为0。")
-		runtime.EventsEmit(a.ctx, "log_update", "=========================== 任务取消 ============================")
+		runtime.EventsEmit(a.ctx, "log_update", "========================= 任务取消 ==========================")
 		return a.errorResponse("缓存代理数为0，任务取消。")
 	}
 
@@ -46,12 +46,13 @@ func (a *App) startListening() Response {
 	if err != nil {
 		a.Error("Error: %s\n", err.Error())
 		runtime.EventsEmit(a.ctx, "log_update", fmt.Sprintf("[ERR] 监听失败 %s ", err.Error()))
-		runtime.EventsEmit(a.ctx, "log_update", "=========================== 任务取消 ============================")
+		runtime.EventsEmit(a.ctx, "log_update", "========================= 任务取消 ==========================")
 		return a.errorResponse(err.Error())
 	}
 	defer listener.Close()
 
-	runtime.EventsEmit(a.ctx, "log_update", "=========================== 开始监听 ============================")
+	runtime.EventsEmit(a.ctx, "log_update",
+		"======================== 开始监听 =========================")
 	runtime.EventsEmit(a.ctx, "log_update", fmt.Sprintf("[INF] 开始监听 socks5://%s -- 挂上代理以使用", a.config.SocksAddress))
 
 	var wg sync.WaitGroup
@@ -150,10 +151,9 @@ func (a *App) stopTask() Response {
 		listener.Close() // 关闭监听器
 		listener = nil   // 清空监听器
 		runtime.EventsEmit(a.ctx, "log_update", "[INF] 停止监听服务")
-		runtime.EventsEmit(a.ctx, "log_update", "=========================== 任务停止 ============================")
+		runtime.EventsEmit(a.ctx, "log_update", "======================== 任务停止 =========================")
 	}
 	a.config.SetStatus(0) // 更新任务状态为停止
-
 	// 返回成功响应
 	return a.successResponse("监听已成功停止", nil)
 }

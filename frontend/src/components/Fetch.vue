@@ -28,37 +28,37 @@ const pagination = {
   showJumper: true,
   showTotal: true
 }
-  const columns = [
-      {
-        title: '序号',
-        dataIndex: 'key',
-      },
-      {
-        title: '类型',
-        dataIndex: 'kind',
-      },
-      {
-        title: '来源',
-        dataIndex: 'source',
-        filterable: {
-          filters: [{
-            text: '89代理',
-            value: '89代理',
-          }, {
-            text: '开心代理',
-            value: '开心代理',
-          }, {
-            text: '齐云代理',
-            value: '齐云代理',
-          }],
-          filter: (value: string, row: any) => row.address.includes(value),
-        }
-      },
-    {
-      title: 'IP',
-      dataIndex: 'address',
-    },
-  ]
+const columns = [
+  {
+    title: '序号',
+    dataIndex: 'key',
+  },
+  {
+    title: '类型',
+    dataIndex: 'kind',
+  },
+  {
+    title: '来源',
+    dataIndex: 'source',
+    //   filterable: {
+    //     filters: [{
+    //       text: '89代理',
+    //       value: '89代理',
+    //     }, {
+    //       text: '开心代理',
+    //       value: '开心代理',
+    //     }, {
+    //       text: '齐云代理',
+    //       value: '齐云代理',
+    //     }],
+    //     filter: (value: string, row: any) => row.address.includes(value),
+    //   }
+  },
+  {
+    title: 'IP',
+    dataIndex: 'address',
+  },
+]
 
 function useFetchedDatasets() {
   Notification.info({
@@ -75,11 +75,11 @@ function useFetchedDatasets() {
         duration: 2000,
         closable: true,
       });
-      
+
       configStore.setStatus(3)
       return;
     }
-    
+
     Notification.success({
       title: '任务完成',
       content: res.Message,
@@ -92,23 +92,23 @@ function getProxies() {
   loading.value = true
   FetchProxies().then(res => {
     if (res.Code !== 200) {
-        Notification.error({
-          title: '错误',
-          content: res.Message,
-          duration: 0,
-          closable: true,
-        });
-        
-        loading.value = false
-        return;
+      Notification.error({
+        title: '错误',
+        content: res.Message,
+        duration: 0,
+        closable: true,
+      });
+
+      loading.value = false
+      return;
     }
-    
+
     Notification.success({
       title: '任务完成',
       content: res.Message,
       duration: 2000,
     });
-    
+
     datasets.value = JSON.parse(res.Data) as ProxyInfo[]
     configStore.setStatus(1)
     loading.value = false
@@ -119,14 +119,16 @@ function getProxies() {
 <template>
   <a-row :gutter="12">
     <a-col :span="18">
-      <a-alert type='info'>公开免费的代理稳定性较差，请谨慎使用。</a-alert>
+      <a-alert type='info'>如欲使用Hunter等进行搜索，请先配置好Key哦</a-alert>
+      
+<!--      <a-alert type='info'>公开免费的代理稳定性较差，请谨慎使用。</a-alert>-->
     </a-col>
     <a-col :span="6">
       <a-button-group>
         <a-button type="outline" size="large" :disabled="loading" @click="getProxies">获取</a-button>
         <a-button type="outline" status="success" size="large" :disabled="loading" @click="useFetchedDatasets">使用</a-button>
       </a-button-group>
-    </a-col>  
+    </a-col>
   </a-row>
   <br/>
   <a-table
@@ -134,7 +136,7 @@ function getProxies() {
       :loading="loading"
       :data="datasets"
       :pagination="pagination"
-      
+
   />
 </template>
 

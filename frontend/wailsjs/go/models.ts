@@ -26,7 +26,7 @@ export namespace config {
 	    FofaKey: string;
 	    HunterKey: string;
 	    QuakeKey: string;
-	    CheckTimeout: string;
+	    Country: string;
 	    Maxpage: string;
 	    CoroutineCount: number;
 	    LiveProxies: number;
@@ -49,7 +49,7 @@ export namespace config {
 	        this.FofaKey = source["FofaKey"];
 	        this.HunterKey = source["HunterKey"];
 	        this.QuakeKey = source["QuakeKey"];
-	        this.CheckTimeout = source["CheckTimeout"];
+	        this.Country = source["Country"];
 	        this.Maxpage = source["Maxpage"];
 	        this.CoroutineCount = source["CoroutineCount"];
 	        this.LiveProxies = source["LiveProxies"];
