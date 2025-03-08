@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "pinia": "^3.0.1",
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@arco-design/web-vue": "^2.56.3",

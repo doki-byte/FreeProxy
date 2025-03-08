@@ -7,6 +7,7 @@ import (
 	"math/rand"
 	"net"
 	"strconv"
+	"strings"
 	"sync"
 	"time"
 
@@ -31,10 +32,6 @@ func (a *App) startListening() Response {
 		// 取消监听
 		cancel()
 		listener.Close() // 关闭监听器
-		//a.Error("监听服务已经在运行，请先停止任务。")
-		//runtime.EventsEmit(a.ctx, "log_update", "[ERR] 监听服务已经在运行。")
-		//runtime.EventsEmit(a.ctx, "log_update", "=========================== 任务取消 ============================")
-		//return a.errorResponse("监听服务已经在运行，请先停止任务。")
 	}
 
 	// 创建监听器
@@ -42,7 +39,9 @@ func (a *App) startListening() Response {
 	var ctx context.Context
 	ctx, cancel = context.WithCancel(context.Background()) // 创建带取消功能的上下文
 
-	listener, err = net.Listen("tcp", a.config.SocksAddress)
+	// 继续按原有逻辑使用个别代理
+	socksAddress := strings.Replace(a.config.SocksAddress, "socks5://", "", -1)
+	listener, err = net.Listen("tcp", socksAddress)
 	if err != nil {
 		a.Error("Error: %s\n", err.Error())
 		runtime.EventsEmit(a.ctx, "log_update", fmt.Sprintf("[ERR] 监听失败 %s ", err.Error()))
@@ -51,9 +50,8 @@ func (a *App) startListening() Response {
 	}
 	defer listener.Close()
 
-	runtime.EventsEmit(a.ctx, "log_update",
-		"======================== 开始监听 =========================")
-	runtime.EventsEmit(a.ctx, "log_update", fmt.Sprintf("[INF] 开始监听 socks5://%s -- 挂上代理以使用", a.config.SocksAddress))
+	runtime.EventsEmit(a.ctx, "log_update", "======================== 开始监听 =========================")
+	runtime.EventsEmit(a.ctx, "log_update", fmt.Sprintf("[INF] 开始监听 %s -- 挂上代理以使用", a.config.SocksAddress))
 
 	var wg sync.WaitGroup
 	semaphore := make(chan struct{}, a.config.CoroutineCount)

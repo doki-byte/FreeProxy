@@ -19,7 +19,11 @@ const formData = ref({
     get: () => configState.getTimeout(),
     set: (value) => configState.setTimeout(value),
   }),
-  SocksAddress: computed(() => configState.getSocksAddress()),
+  SocksAddress: computed({
+    get: () => configState.getSocksAddress(),
+    set: (value) => configState.setSocksAddress(value),
+  }),
+
   Status: 0,
 
   Email: computed({
@@ -49,6 +53,10 @@ const formData = ref({
   Country:computed({
     get: () => configState.getCountry(),
     set: (value) => configState.setCountry(value),
+  }),
+  GlobalProxy: computed({
+    get: () => configState.getGlobalProxy(),
+    set: (value) => configState.setGlobalProxy(value),
   })
 
 });
@@ -106,6 +114,7 @@ function saveConfig() {
     HunterKey: formData.value.HunterKey,
     QuakeKey: formData.value.QuakeKey,
     Maxpage: formData.value.MaxPage.toString(),
+    GlobalProxy: formData.value.GlobalProxy,
     LiveProxies: configState.getLiveProxies(),
     AllProxies: configState.getAllProxies(),
     LiveProxyLists: [] as string[],  // 初始化为字符串数组
@@ -276,9 +285,26 @@ onMounted(() => {
         </a-form-item>
       </a-col>
     </a-row>
-    <a-form-item label="Socks地址" name="SocksAddress">
-      <a-input v-model="formData.SocksAddress"></a-input>
-    </a-form-item>
+    <a-row :gutter="[24, 12]">
+      <a-col :span="12">
+        <a-form-item label="全局代理(暂未实现)" name="GlobalProxy">
+          <a-select
+              v-model="formData.GlobalProxy"
+              placeholder="请选择是否配置全局代理"
+              hide-on-select
+              allow-clear
+          >
+            <a-option value="1">是</a-option>
+            <a-option value="0">否</a-option>
+          </a-select>
+        </a-form-item>
+      </a-col>
+      <a-col :span="12">
+        <a-form-item label="Socks地址" name="SocksAddress">
+          <a-input v-model="formData.SocksAddress"></a-input>
+        </a-form-item>
+      </a-col>
+    </a-row>
   </a-form>
 </template>
 

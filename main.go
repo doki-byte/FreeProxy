@@ -22,10 +22,10 @@ func main() {
 	app := client.NewApp()
 
 	err := wails.Run(&options.App{
-		Title:         "FreeProxy 一款简洁的代理池工具",
-		Width:         680,
-		Height:        768,
-		DisableResize: true,
+		Title:  "FreeProxy 一款简洁的代理池工具",
+		Width:  750,
+		Height: 768,
+		//DisableResize: true,
 		AssetServer: &assetserver.Options{
 			Assets: assets,
 		},

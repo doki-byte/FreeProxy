@@ -3,15 +3,14 @@ package client
 import (
 	"doki-byte/FreeProxy/backend/config"
 	"fmt"
+	"github.com/imroc/req/v3"
+	"github.com/wailsapp/wails/v2/pkg/runtime"
 	"os"
 	runtime2 "runtime"
 	"strconv"
 	"strings"
 	"sync"
 	"time"
-
-	"github.com/imroc/req/v3"
-	"github.com/wailsapp/wails/v2/pkg/runtime"
 )
 
 func (a *App) CheckDatasets() Response {
@@ -62,24 +61,26 @@ func (a *App) CheckDatasets() Response {
 		path = config.GetCurrentAbPathByExecutable() + "/proxy_success.txt"
 	}
 
-	// 检查文件是否已存在，如果不存在则创建
-	file, err := os.OpenFile(path, os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0644)
-	if err != nil {
-		a.Error("无法打开文件: %v", err)
-	}
-	defer file.Close()
-
 	// 使用 map 去重代理列表
 	proxySet := make(map[string]struct{})
 	for _, proxy := range availableProxiesList {
 		proxySet[proxy] = struct{}{}
 	}
 
-	// 写入去重后的代理地址，并保证每行一个代理
-	for proxy := range proxySet {
-		_, err := file.WriteString(proxy + "\n")
+	if len(proxySet) != 0 {
+		// 检查文件是否已存在，如果不存在则创建
+		file, err := os.OpenFile(path, os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0644)
 		if err != nil {
-			a.Error("写入失败: %v", err)
+			a.Error("无法打开文件: %v", err)
+		}
+		defer file.Close()
+
+		// 写入去重后的代理地址，并保证每行一个代理
+		for proxy := range proxySet {
+			_, err := file.WriteString(proxy + "\n")
+			if err != nil {
+				a.Error("写入失败: %v", err)
+			}
 		}
 	}
 

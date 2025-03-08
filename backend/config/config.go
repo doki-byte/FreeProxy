@@ -30,8 +30,9 @@ type Config struct {
 
 	Status int
 
-	Code  int
-	Error string
+	Code        int
+	Error       string
+	GlobalProxy string
 }
 
 // 获取当前执行程序所在的绝对路径
@@ -63,6 +64,7 @@ func CreateConfigFile() error {
 	// 文件不存在，创建并写入默认配置
 	defaultConfig := map[string]string{
 		"Timeout":        "10",
+		"GlobalProxy":    "0",
 		"Country":        "0",
 		"Email":          "",
 		"FofaKey":        "",
@@ -70,7 +72,7 @@ func CreateConfigFile() error {
 		"QuakeKey":       "",
 		"Maxpage":        "10",
 		"CoroutineCount": "200",
-		"SocksAddress":   "127.0.0.1:1080",
+		"SocksAddress":   "socks5://127.0.0.1:1080",
 	}
 
 	// 创建文件
@@ -201,12 +203,13 @@ func (p *Config) SaveConfig() error {
 		"Code":           strconv.Itoa(p.Code),
 		"Error":          p.Error,
 		"Country":        p.Country,
+		"GlobalProxy":    p.GlobalProxy,
 	}
 
 	for key, value := range configMap {
-		if key == "SocksAddress" {
-			value = strings.Replace(value, "socks5://", "", -1)
-		}
+		//if key == "SocksAddress" {
+		//	value = strings.Replace(value, "socks5://", "", -1)
+		//}
 
 		_, err := writer.WriteString(fmt.Sprintf("%s=%s\n", key, value))
 		if err != nil {
@@ -218,6 +221,19 @@ func (p *Config) SaveConfig() error {
 }
 
 func (p *Config) GetProfile() Config {
+	//optSys := runtime.GOOS
+	//proxy_success_path := ""
+	//if optSys == "windows" {
+	//	proxy_success_path = GetCurrentAbPathByExecutable() + "\\proxy_success.txt"
+	//} else {
+	//	proxy_success_path = GetCurrentAbPathByExecutable() + "/proxy_success.txt"
+	//}
+	//if _, err := os.Stat(proxy_success_path); err == nil {
+	//	// 如果文件存在，则返回
+	//	p.FilePath = proxy_success_path
+	//} else {
+	//	p.FilePath = ""
+	//}
 	return *p
 }
 

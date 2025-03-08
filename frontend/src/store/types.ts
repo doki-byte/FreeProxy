@@ -21,6 +21,7 @@ export interface Config {
 
     Code: number;
     Error: string;
+    GlobalProxy: string;
 }
 
 
@@ -44,7 +45,8 @@ export const useConfigStore = defineStore('config', {
         CheckTimeout: 0,
         Maxpage: 0,
         LiveProxyLists: [] as any[], // 可以根据实际数据改成具体类型
-        Country: "0"
+        Country: "0",
+        GlobalProxy:"0"
     }),
 
     actions: {
@@ -64,6 +66,7 @@ export const useConfigStore = defineStore('config', {
                 this.QuakeKey = profile.QuakeKey;
                 this.Maxpage = Number(profile.Maxpage);
                 this.Country = profile.Country;
+                this.GlobalProxy=profile.GlobalProxy;
             } catch (err) {
                 console.error("获取配置失败:", err);
             }
@@ -93,7 +96,10 @@ export const useConfigStore = defineStore('config', {
 
         // 获取和设置方法
         getSocksAddress() {
-            return `socks5://${this.SocksAddress}`;
+            return this.SocksAddress;
+        },
+        setSocksAddress(socksAddress: string) {
+            this.SocksAddress = socksAddress;
         },
         getTimeout() {
             return this.Timeout;
@@ -166,6 +172,12 @@ export const useConfigStore = defineStore('config', {
         },
         setCountry(country: string) {
             this.Country = country;
+        },
+        getGlobalProxy(){
+            return this.GlobalProxy;
+        },
+        setGlobalProxy(proxy: string) {
+            this.GlobalProxy = proxy;
         }
     }
 });

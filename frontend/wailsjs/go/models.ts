@@ -38,6 +38,7 @@ export namespace config {
 	    Status: number;
 	    Code: number;
 	    Error: string;
+	    GlobalProxy: string;
 	
 	    static createFrom(source: any = {}) {
 	        return new Config(source);
@@ -61,6 +62,7 @@ export namespace config {
 	        this.Status = source["Status"];
 	        this.Code = source["Code"];
 	        this.Error = source["Error"];
+	        this.GlobalProxy = source["GlobalProxy"];
 	    }
 	}
 

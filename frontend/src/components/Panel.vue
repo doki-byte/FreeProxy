@@ -91,11 +91,11 @@ onUnmounted(() => {
 <style scoped>
 
 .header {
-  margin: 8px;
+  margin: 4px;
   background-color: rgb(255, 255, 255);
 }
 .content {
-  margin: 8px;
+  margin: 4px;
 }
 
 .footer {

@@ -63,7 +63,7 @@ const columns = [
 function useFetchedDatasets() {
   Notification.info({
     title: '任务开始',
-    content: '请转至运行标签页查看',
+    content: '请手动转至运行标签页查看',
     duration: 1500,
     closable: true,
   });
@@ -120,7 +120,7 @@ function getProxies() {
   <a-row :gutter="12">
     <a-col :span="18">
       <a-alert type='info'>如欲使用Hunter等进行搜索，请先配置好Key哦</a-alert>
-      
+
 <!--      <a-alert type='info'>公开免费的代理稳定性较差，请谨慎使用。</a-alert>-->
     </a-col>
     <a-col :span="6">

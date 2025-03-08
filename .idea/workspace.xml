@@ -5,15 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e00aaf87-eebb-402b-81c7-72daf396e82c" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FreeProxy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FreeProxy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/client/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/client/app.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/client/check.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/client/check.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/client/start.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/client/start.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json.md5" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Config.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Config.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Fetch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Fetch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Panel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Panel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/wailsjs/go/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/wailsjs/go/models.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fetch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/proxy.gif" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="GOROOT" url="file://E:/Program Files/Go" />
+  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../Program Files/Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -39,7 +54,7 @@
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\muhan\\Desktop\\FreeProxy\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;E:\\Notes\\脚本工具源码\\代理池\\FreeProxy\\frontend\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>

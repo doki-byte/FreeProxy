@@ -7,12 +7,10 @@ import (
 	"doki-byte/FreeProxy/backend/info"
 	"doki-byte/FreeProxy/backend/request"
 	"fmt"
-	"io"
+	"github.com/wailsapp/wails/v2/pkg/runtime"
 	"os"
 	"strings"
 	"time"
-
-	"github.com/wailsapp/wails/v2/pkg/runtime"
 )
 
 type App struct {
@@ -77,24 +75,33 @@ func (a *App) FetchProxies() Response {
 
 func (a *App) ChooseFile() config.Config {
 	a.config.Code = 200
+
+	//// 获取配置文件路径
+	//optSys := runtime2.GOOS
+	//proxy_success_path := ""
+	//if optSys == "windows" {
+	//	proxy_success_path = config.GetCurrentAbPathByExecutable() + "\\proxy_success.txt"
+	//} else {
+	//	proxy_success_path = config.GetCurrentAbPathByExecutable() + "/proxy_success.txt"
+	//}
+	//if _, err := os.Stat(proxy_success_path); err == nil {
+	//	a.config.FilePath = proxy_success_path
+	//} else {
+	//}
+
 	a.config.FilePath, _ = runtime.OpenFileDialog(a.ctx, runtime.OpenDialogOptions{
 		Title:           "请选择配置文件",
 		ShowHiddenFiles: true,
 		Filters: []runtime.FileFilter{
-			{
-				DisplayName: "配置文件",
-				Pattern:     "*.txt",
-			},
+			{DisplayName: "配置文件", Pattern: "*.txt"},
 		},
 	})
-
 	if a.config.FilePath == "" {
 		a.config.Code = 400
 		a.config.Error = "未选择配置文件"
 		return a.config.GetProfile()
 	}
 
-	var lists []string
 	f, errOpen := os.Open(a.config.FilePath)
 	if errOpen != nil {
 		a.config.Code = 400
@@ -103,24 +110,35 @@ func (a *App) ChooseFile() config.Config {
 	}
 	defer f.Close()
 
-	r := bufio.NewReader(f)
-	for {
-		line, err := r.ReadString('\n')
-		line = strings.TrimSpace(line)
-		if err != nil && err != io.EOF {
-			a.config.Code = 400
-			a.config.Error = err.Error()
-			return a.config.GetProfile()
-		}
-		if err == io.EOF {
-			break
-		}
+	stat, _ := f.Stat()
+	if stat.Size() == 0 {
+		runtime.EventsEmit(a.ctx, "log_update", fmt.Sprintf("[WARN] 配置文件 %s 是空的", a.config.FilePath))
+		a.config.Code = 400
+		a.config.Error = "配置文件为空"
+		return a.config.GetProfile()
+	}
 
+	// 按行读取代理数据
+	var lists []string
+	scanner := bufio.NewScanner(f)
+	for scanner.Scan() {
+		line := strings.TrimSpace(scanner.Text())
+		// 忽略空行和注释行
+		if line == "" || strings.HasPrefix(line, "#") {
+			continue
+		}
 		lists = append(lists, line)
 	}
 
+	if err := scanner.Err(); err != nil {
+		a.config.Code = 400
+		a.config.Error = err.Error()
+		return a.config.GetProfile()
+	}
+
 	a.config.SetAllProxies(lists)
-	runtime.EventsEmit(a.ctx, "log_update", fmt.Sprintf("[INF] 配置文件 %s 读取成功", a.config.FilePath))
+	runtime.EventsEmit(a.ctx, "log_update", fmt.Sprintf("[INF] 配置文件 %s 读取成功，共 %d 条数据", a.config.FilePath, len(lists)))
+
 	rsp := a.CheckDatasets()
 	if rsp.Code != 200 {
 		a.Error("测试有误： %s\n", rsp.Message)
@@ -133,6 +151,8 @@ func (a *App) ChooseFile() config.Config {
 }
 
 func (a *App) UseFetchedDatasets() Response {
+	a.StopListening()
+	a.stopTask()
 	runtime.EventsEmit(a.ctx, "log_update", "[INF] 使用抓取的代理")
 	return a.CheckDatasets()
 }
@@ -148,6 +168,8 @@ func (a *App) metricsPusher() {
 
 func (a *App) SaveConfig(data config.Config) string {
 	a.config = &data
+	a.StopListening()
+	a.stopTask()
 	err := a.config.SaveConfig()
 	if err != nil {
 		return "保存失败: " + err.Error()
